@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Usuario } from './usuario.model';
+import { NvUsuarioComponent } from './nv-usuario/nv-usuario.component';
+
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -9,15 +14,26 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class UsuariosComponent implements OnInit {
 
+  usuarios: Usuario[] =[];
 
 
-  constructor(private modalService: NgbModal) { }
+
+  bsModalRef: BsModalRef;
+  constructor(private modalService: BsModalService) {}
+
+  criarUsuario() {
+  const initialState = {
+    title: 'Criar Usuario',
+    usuario: new Usuario(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+    mensagem: 'Usuario criado com sucesso'
+  };
+  this.bsModalRef = this.modalService.show(NvUsuarioComponent, {initialState});
+  this.bsModalRef.content.closeBtnName = 'Close';
+}
 
   ngOnInit() {
   }
 
-  openLg(content) {
-   this.modalService.open(content, { size: 'lg' });
- }
+
 
 }

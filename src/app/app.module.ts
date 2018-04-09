@@ -4,9 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -47,12 +50,17 @@ import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
     AvPedidosComponent
   ],
   imports: [
+    NgbModule.forRoot(),
+    BsDropdownModule.forRoot(),
     BrowserModule,
     FormsModule,
     routing,
     BsDatepickerModule.forRoot(),
-    NgbModule.forRoot()
+    ModalModule.forRoot()
   ],
+  entryComponents: [
+   NvUsuarioComponent
+ ],
   providers: [],
   bootstrap: [AppComponent]
 })

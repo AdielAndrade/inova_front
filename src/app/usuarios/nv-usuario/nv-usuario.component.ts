@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
+import { Usuario } from '../usuario.model';
+
 import{ NgForm } from '@angular/forms';
 
 @Component({
@@ -9,16 +14,18 @@ import{ NgForm } from '@angular/forms';
 })
 export class NvUsuarioComponent implements OnInit {
 
+  title: string;
+  closeBtnName: string;
+  mensagem: string;
+  usuario: Usuario;
 
 
-  constructor() { }
+  constructor(public bsModalRef: BsModalRef) {}
+
 
   ngOnInit() {
   }
 
-  criarUsuario(userForm: NgForm): void{
-    console.log(userForm.value);
 
-  }
 
 }

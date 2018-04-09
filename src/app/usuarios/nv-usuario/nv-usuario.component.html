@@ -1,109 +1,115 @@
-<form #usuarioForm ="ngForm" (ngSubmit)="criarUsuario(usuarioForm)">
-
-
-
-<h4>Dados Pessoais</h4>
-
-<div class="form-group">
-  <label for="nome">Nome completo</label>
-  <input id="nome" [(ngModel)]="" class="form-control" type="text" name="">
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
+<div class="modal-body">
 
-<div class="form-group">
-  <label for="email">Email</label>
-  <input id="email" [(ngModel)]="" class="form-control" type="email" name="">
+  <form #usuarioForm ="ngForm" (ngSubmit)="criarUsuario(usuarioForm)">
+
+    <h4>Dados Pessoais</h4>
+
+    <div class="form-group">
+      <label for="nome">Nome completo</label>
+      <input id="nome" [(ngModel)]="usuario.name" class="form-control" type="text" name="nome">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" [(ngModel)]="usuario.email" class="form-control" type="email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="numero">Numero</label>
+      <input id="numero" [(ngModel)]="usuario.phone" class="form-control" type="text" name="numero">
+    </div>
+
+    <div class="form-group">
+      <label for="dataAniversario">Data de Aniversario</label>
+      <input id="dataAniversario" [(ngModel)]="usuario.birth" class="form-control" type="text"  bsDatepicker name="dataAniversario">
+    </div>
+
+    <div class="form-group">
+      <label>Genero</label>
+      <div class="form-control">
+        <label class="radio-inline">
+          <input type="radio" name="genero" value="masculino"
+          [(ngModel)]="usuario.sex">
+          Masculino
+        </label>
+
+        <label class="inline">
+          <input type="radio" name="genero" value="feminino"
+          [(ngModel)]="usuario.sex">
+          Feminino
+        </label>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+    <h4>Endereço</h4>
+
+    <div class="form-group">
+      <label for="rua">Rua</label>
+      <input id="rua" [(ngModel)]="usuario.street" class="form-control" type="text" name="rua">
+    </div>
+
+    <div class="form-group">
+      <label for="numero">Numero</label>
+      <input id="numero" [(ngModel)]="usuario.number" class="form-control" type="text" name="numero">
+    </div>
+
+    <div class="form-group">
+      <label for="bairro">Bairro</label>
+      <input id="bairro" [(ngModel)]="usuario.neighborhood" class="form-control" type="text" name="bairro">
+    </div>
+
+    <div class="form-group">
+      <label for="cidade">Cidade</label>
+      <input id="cidade" [(ngModel)]="usuario.city" class="form-control" type="text" name="cidade">
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado</label>
+      <select id="estado" [(ngModel)]="usuario.state" class="form-control" name="estado">
+        <option value="AC">AC</option>
+        <option value="AL">AL</option>
+        <option value="AP">AP</option>
+        <option value="AM">AM</option>
+        <option value="BA">BA</option>
+        <option value="CE">CE</option>
+        <option value="DF">DF</option>
+        <option value="ES">ES</option>
+        <option value="GO">GO</option>
+        <option value="MA">MA</option>
+        <option value="MT">MT</option>
+        <option value="MS">MS</option>
+        <option value="MG">MG</option>
+        <option value="PA">PA</option>
+        <option value="PB">PB</option>
+        <option value="PR">PR</option>
+        <option value="PE">PE</option>
+        <option value="PI">PI</option>
+        <option value="RJ">RJ</option>
+        <option value="RN">RN</option>
+        <option value="RS">RS</option>
+        <option value="RO">RO</option>
+        <option value="RR">RR</option>
+        <option value="SC">SC</option>
+        <option value="SP">SP</option>
+        <option value="SE">SE</option>
+        <option value="TO">TO</option>
+      </select>
+    </div>
+
+
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+  <button type="submit" class="btn btn-success  ">Confirmar</button>
 </div>
-
-<div class="form-group">
-  <label for="numero">Numero</label>
-  <input id="numero" [(ngModel)]="" class="form-control" type="text" name="">
-</div>
-
-<div class="form-group">
-  <label for="dataAniversario">Data de Aniversario</label>
-  <input id="dataAniversario" [(ngModel)]="" class="form-control" type="text"  bsDatepicker name="">
-</div>
-
-<div class="form-group">
-  <label>Genero</label>
-  <div class="form-control">
-    <label class="radio-inline">
-      <input type="radio" name="" value="masculino"
-      [(ngModel)]="">
-      Masculino
-    </label>
-
-    <label class="inline">
-      <input type="radio" name="" value="feminino"
-       [(ngModel)]="">
-      Feminino
-    </label>
-
-  </div>
-
-</div>
-
-<hr>
-
-<h4>Endereço</h4>
-
-<div class="form-group">
-  <label for="rua">Rua</label>
-  <input id="rua" [(ngModel)]="rua" class="form-control" type="text" name="">
-</div>
-
-<div class="form-group">
-  <label for="numero">Numero</label>
-  <input id="numero" [(ngModel)]="numero" class="form-control" type="text" name="">
-</div>
-
-<div class="form-group">
-  <label for="bairro">Bairro</label>
-  <input id="bairro" [(ngModel)]="bairro" class="form-control" type="text" name="">
-</div>
-
-<div class="form-group">
-  <label for="cidade">Cidade</label>
-  <input id="cidade" [(ngModel)]="cidade" class="form-control" type="text" name="">
-</div>
-<div class="form-group">
-  <label for="estado">Estado</label>
-  <select id="estado" class="form-control" name="">
-    <option value="AC">AC</option>
-    <option value="AL">AL</option>
-    <option value="AP">AP</option>
-    <option value="AM">AM</option>
-    <option value="BA">BA</option>
-    <option value="CE">CE</option>
-    <option value="DF">DF</option>
-    <option value="ES">ES</option>
-    <option value="GO">GO</option>
-    <option value="MA">MA</option>
-    <option value="MT">MT</option>
-    <option value="MS">MS</option>
-    <option value="MG">MG</option>
-    <option value="PA">PA</option>
-    <option value="PB">PB</option>
-    <option value="PR">PR</option>
-    <option value="PE">PE</option>
-    <option value="PI">PI</option>
-    <option value="RJ">RJ</option>
-    <option value="RN">RN</option>
-    <option value="RS">RS</option>
-    <option value="RO">RO</option>
-    <option value="RR">RR</option>
-    <option value="SC">SC</option>
-    <option value="SP">SP</option>
-    <option value="SE">SE</option>
-    <option value="TO">TO</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="pais">Pais</label>
-  <input id="pais" [(ngModel)]="pais" class="form-control" type="text" name="">
-</div>
-
-<button type="submit" class="btn btn-success  ">Criar</button>
-
 </form>
