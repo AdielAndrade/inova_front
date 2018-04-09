@@ -2,7 +2,6 @@ export class Usuario {
   public id: number;
   public name: string;
   public email: string;
-  public cpf: string;
   public birth: string;
   public password: string;
   public sex: string;
@@ -16,7 +15,7 @@ export class Usuario {
   public city: string;
   public state: string;
 
-  constructor(id: number, name: string, email: string, cpf:string, password: string, birth: string, sex: string, points: string, phone: string, street: string,
+  constructor(id: number, name: string, email: string, password: string, birth: string, sex: string, points: string, phone: string, street: string,
               complement: string, number: number, neighborhood: string, city: string, state: string, zipcode: string) {
     this.id = id;
     this.name = name;
@@ -33,6 +32,6 @@ export class Usuario {
     this.city = city;
     this.state = state;
     this.zipcode = zipcode;
-    this.cpf = cpf;
+
   };
 }

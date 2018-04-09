@@ -1,15 +1,23 @@
-<div class="top-space">
-
+<div class="top-space" >
 
   <nav class="navbar navbar-dark bg-dark ">
     <span class="navbar-brand">Lista de Usuarios</span>
 
-    
+
+    <form class="form-inline navbar-right">
+      <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
+    </form>
   </nav>
+
+
 
 </div>
 
+
+
 <br>
+
 
 <table>
   <tr>
@@ -25,7 +33,10 @@
     <td>{{usuario.cpf}}</td>
     <td>{{usuario.email}}</td>
     <td>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="openLg(visualizar_editar)">Visualizar/Editar</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="atualizarUsuario(usuario)">Editarr</button>
+      <br>
+      <button class="btn btn-outline-danger my-2 my-sm-0" (click)="deletarUsuario(usuario)">Deletar</button>
+
     </td>
   </tr>
 </table>
