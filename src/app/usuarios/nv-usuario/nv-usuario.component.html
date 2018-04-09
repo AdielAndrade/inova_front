@@ -21,6 +21,11 @@
     </div>
 
     <div class="form-group">
+      <label for="senha">Senha</label>
+      <input id="senha" [(ngModel)]="usuario.password" class="form-control" type="password" name="senha">
+    </div>
+
+    <div class="form-group">
       <label for="numero">Numero</label>
       <input id="numero" [(ngModel)]="usuario.phone" class="form-control" type="text" name="numero">
     </div>
@@ -67,6 +72,18 @@
       <label for="bairro">Bairro</label>
       <input id="bairro" [(ngModel)]="usuario.neighborhood" class="form-control" type="text" name="bairro">
     </div>
+
+    <div class="form-group">
+      <label for="complemento">Complemento</label>
+      <input id="complemento" [(ngModel)]="usuario.complement" class="form-control" type="text" name="complemento">
+    </div>
+
+
+    <div class="form-group">
+      <label for="cep">Cep</label>
+      <input id="cep" [(ngModel)]="usuario.zipcode" class="form-control" type="text" name="cep">
+    </div>
+
 
     <div class="form-group">
       <label for="cidade">Cidade</label>
