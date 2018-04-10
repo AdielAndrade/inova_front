@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Pobjects } from './p-object.model';
+import { NvObjetoComponent } from './nv-objeto/nv-objeto.component';
+
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -9,11 +13,20 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class PedidosComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  bsModalRef: BsModalRef;
+  objects: Pobjects[] = [];
 
-  openLg(content) {
-   this.modalService.open(content, { size: 'lg' });
- }
+  constructor(private modalService: BsModalService) { }
+
+  criarObjeto() {
+    const initialState = {
+      title: 'Criar Objeto',
+      objetos: new Pobjects(null,null,null,null,null),
+      mensagem: 'Objeto adicionado com sucesso'
+    };
+    this.bsModalRef = this.modalService.show(NvObjetoComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+  }
 
   ngOnInit() {
   }

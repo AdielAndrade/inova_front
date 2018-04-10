@@ -59,7 +59,8 @@ import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
     ModalModule.forRoot()
   ],
   entryComponents: [
-   NvUsuarioComponent
+   NvUsuarioComponent,
+   NvObjetoComponent
  ],
   providers: [],
   bootstrap: [AppComponent]

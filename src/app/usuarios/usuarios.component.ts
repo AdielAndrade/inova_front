@@ -24,7 +24,7 @@ export class UsuariosComponent implements OnInit {
   criarUsuario() {
   const initialState = {
     title: 'Criar Usuario',
-    usuario: new Usuario(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+    usuario: new Usuario(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
     mensagem: 'Usuario criado com sucesso'
   };
   this.bsModalRef = this.modalService.show(NvUsuarioComponent, {initialState});

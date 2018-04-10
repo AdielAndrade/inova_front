@@ -29,14 +29,12 @@
   </tr>
   <tr *ngFor="let usuario of usuarios">
     <td></td>
+    <td>{{usuario.id}}</td>
     <td>{{usuario.name}}</td>
     <td>{{usuario.cpf}}</td>
     <td>{{usuario.email}}</td>
     <td>
-      <button class="btn btn-outline-success my-2 my-sm-0" (click)="atualizarUsuario(usuario)">Editarr</button>
-      <br>
-      <button class="btn btn-outline-danger my-2 my-sm-0" (click)="deletarUsuario(usuario)">Deletar</button>
-
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="atualizarUsuario(usuario)">Opções</button>
     </td>
   </tr>
 </table>

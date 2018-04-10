@@ -1,3 +1,41 @@
-<p>
-  nv-objeto works!
-</p>
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{title}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+
+  <form #objectForm ="ngForm" (ngSubmit)="criarObjeto(objectForm)">
+
+    <h4>Dados do Objeto</h4>
+
+    <div class="form-group">
+      <label for="nome">Nome completo</label>
+      <input id="nome" [(ngModel)]="objetos.name" class="form-control" type="text" name="nome">
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <input id="descricao" [(ngModel)]="objetos.description" class="form-control" type="text" name="descricao">
+    </div>
+
+    <div class="form-group">
+      <label for="quantidade">Quantidade</label>
+      <input id="quantidade" [(ngModel)]="objetos.amount_avaliable" class="form-control" type="number" name="quantidade">
+    </div>
+
+    <div class="form-group">
+      <label for="foto">Url da foto</label>
+      <input id="foto" [(ngModel)]="objetos.photo" class="form-control" type="text" name="foto">
+    </div>
+
+
+
+
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+  <button type="submit" class="btn btn-success">Confirmar</button>
+</div>
+</form>

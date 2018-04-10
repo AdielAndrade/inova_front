@@ -22,65 +22,21 @@
     <th>QUANTIDADE</th>
     <th>AÇÕES</th>
   </tr>
-  <tr>
-    <td>#1</td>
-    <td>Jabuticabeira </td>
-    <td>Pé frutosa/ Não pode ficar em Calçadas</td>
-    <td>50</td>
+  <tr *ngFor="let objeto of objects">
+    <td></td>
+    <td>{{objeto.id}}</td>
+    <td>{{objeto.name}}</td>
+    <td>{{objeto.description}}</td>
+    <td>{{objeto.amount_avaliable}}</td>
     <td>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="openLg(visualizar_editar)">Visualizar/Editar</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="opcoes(objeto)">Opções</button>
     </td>
-  </tr>
-  <tr>
-    <td>#2</td>
-    <td>Palmeira</td>
-    <td>Não frutoso/ pode ficar em qualquer lugar</td>
-    <td>8</td>
-    <td>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="openLg(visualizar_editar)">Visualizar/Editar</button>
-    </td>
-  </tr>
+
 </table>
 
+
+
+
 <div class="fixed-action-btn" >
-  <button class="btn btn-success" (click)="openLg(novoObjeto)"><i class="material-icons">person_add</i> <span> Criar Objeto</span></button>
-
+  <button class="btn btn-success" (click)="criarObjeto()" ><span> Criar Usuario</span></button>
 </div>
-
-
-<ng-template #visualizar_editar let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Objetos</h4>
-
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  <div class="modal-body">
-    <app-nv-objeto></app-nv-objeto>
-  </div>
-
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="c('Close click')">Sair</button>
-  </div>
-</ng-template>
-
-
-<ng-template #novoObjeto let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Novo Objeto</h4>
-
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  <div class="modal-body">
-    <app-nv-objeto></app-nv-objeto>
-  </div>
-
-  <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="c('Close click')">Sair</button>
-  </div>
-</ng-template>

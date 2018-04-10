@@ -2,12 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-
-import  {FormGroup, FormBuilder} from '@angular/forms';;
-
 import { Usuario } from '../usuario.model';
-import { UsuarioService } from '../usuario.UsuarioService';
-
 
 
 import{ NgForm } from '@angular/forms';
@@ -25,10 +20,6 @@ export class NvUsuarioComponent implements OnInit {
   usuario: Usuario;
   usuarioS: Usuario;
 
-
-  usuarioForm: FormGroup;
-
-
   constructor(public bsModalRef: BsModalRef) {}
 
   criarUsuario(usuarioForm){
@@ -36,6 +27,8 @@ export class NvUsuarioComponent implements OnInit {
       usuarioForm.value.dataAniversario, usuarioForm.value.genero, null ,usuarioForm.value.telefone, usuarioForm.value.rua, usuarioForm.value.complemento,
       usuarioForm.value.numero, usuarioForm.value.bairro ,usuarioForm.value.cidade, usuarioForm.value.estado, usuarioForm.value.cep);
       console.log(this.usuarioS);
+      this.bsModalRef.hide();
+
   }
 
 
