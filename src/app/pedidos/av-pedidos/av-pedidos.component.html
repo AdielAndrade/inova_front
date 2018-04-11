@@ -42,27 +42,8 @@
     <td>valida</td>
 
     <td>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="openLg(resposta)">Avaliar</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="avaliar()">Avaliar</button>
 
     </td>
   </tr>
 </table>
-
-
-
-
-<ng-template #resposta let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Resposta</h4>
-
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  <div class="modal-body">
-
-  </div>
-
-
-</ng-template>

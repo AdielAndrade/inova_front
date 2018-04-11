@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
+import { AvaliacoComponent } from './avaliaco/avaliaco.component';
 
 @Component({
   selector: 'app-av-pedidos',
@@ -9,12 +12,20 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AvPedidosComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+    bsModalRef: BsModalRef;
 
-  openLg(content) {
-   this.modalService.open(content, { size: 'lg' });
-  }
 
+  constructor(private modalService: BsModalService) { }
+
+  avaliar() {
+    const initialState = {
+      title: 'Avaliar Pedido',
+
+      mensagem: 'Objeto adicionado com sucesso',
+    };
+    this.bsModalRef = this.modalService.show(AvaliacoComponent , {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+}
   ngOnInit() {
   }
 

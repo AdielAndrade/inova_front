@@ -28,6 +28,7 @@ import { MAvaliacaoComponent } from './missoes/respostas/m-avaliacao/m-avaliacao
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { NvObjetoComponent } from './pedidos/nv-objeto/nv-objeto.component';
 import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
+import { AvaliacoComponent } from './pedidos/av-pedidos/avaliaco/avaliaco.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
     MAvaliacaoComponent,
     PedidosComponent,
     NvObjetoComponent,
-    AvPedidosComponent
+    AvPedidosComponent,
+    AvaliacoComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -60,7 +62,8 @@ import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
   ],
   entryComponents: [
    NvUsuarioComponent,
-   NvObjetoComponent
+   NvObjetoComponent,
+   AvaliacoComponent
  ],
   providers: [],
   bootstrap: [AppComponent]
