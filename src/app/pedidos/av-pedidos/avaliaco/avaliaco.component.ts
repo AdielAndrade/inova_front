@@ -10,7 +10,15 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 export class AvaliacoComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+  closeBtnName: string;
+  mensagem: string;
+  
+  modificar: boolean;
+
+  constructor(public bsModalRef: BsModalRef) {
+
+  }
 
   ngOnInit() {
   }
