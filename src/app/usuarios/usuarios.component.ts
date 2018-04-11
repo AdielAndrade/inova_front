@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Usuario } from './usuario.model';
+import { UsuarioService } from './usuario.service';
 import { NvUsuarioComponent } from './nv-usuario/nv-usuario.component';
 
 import { BsModalService } from 'ngx-bootstrap/modal';
@@ -18,7 +19,7 @@ export class UsuariosComponent implements OnInit {
 
 
   bsModalRef: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService, private usuarioService: UsuarioService) {}
 
   criarUsuario() {
     const initialState = {
@@ -43,6 +44,9 @@ export class UsuariosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.usuarioService.getUsuarios()
+    .subscribe(usuarios => this.usuarios = usuarios);
+
   }
 
 

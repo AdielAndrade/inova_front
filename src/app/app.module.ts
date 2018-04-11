@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { routing } from './app.routing';
 
@@ -29,6 +30,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { NvObjetoComponent } from './pedidos/nv-objeto/nv-objeto.component';
 import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
 import { AvaliacoComponent } from './pedidos/av-pedidos/avaliaco/avaliaco.component';
+import { UsuarioService } from './usuarios/usuario.service';
 
 
 @NgModule({
@@ -58,14 +60,17 @@ import { AvaliacoComponent } from './pedidos/av-pedidos/avaliaco/avaliaco.compon
     FormsModule,
     routing,
     BsDatepickerModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    HttpModule
   ],
   entryComponents: [
    NvUsuarioComponent,
    NvObjetoComponent,
    AvaliacoComponent
  ],
-  providers: [],
+  providers: [
+    UsuarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
