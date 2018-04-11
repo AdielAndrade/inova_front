@@ -17,19 +17,30 @@ export class UsuariosComponent implements OnInit {
   usuarios: Usuario[] =[];
 
 
-
   bsModalRef: BsModalRef;
   constructor(private modalService: BsModalService) {}
 
   criarUsuario() {
-  const initialState = {
-    title: 'Criar Usuario',
-    usuario: new Usuario(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
-    mensagem: 'Usuario criado com sucesso'
-  };
-  this.bsModalRef = this.modalService.show(NvUsuarioComponent, {initialState});
-  this.bsModalRef.content.closeBtnName = 'Close';
-}
+    const initialState = {
+      title: 'Criar Usuario',
+      usuario: new Usuario(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null),
+      mensagem: 'Usuario criado com sucesso',
+      modificar: true
+    };
+    this.bsModalRef = this.modalService.show(NvUsuarioComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+  }
+
+  opcoesUsuario(usuario: Usuario) {
+    const initialState = {
+      title: 'Opçoes de Usuario',
+      usuario: usuario,
+      mensagem: 'Usuario criado com sucesso',
+      modificar: true
+    };
+    this.bsModalRef = this.modalService.show(NvUsuarioComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+  }
 
   ngOnInit() {
   }

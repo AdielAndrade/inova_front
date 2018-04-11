@@ -10,9 +10,14 @@
 
     <h4>Dados Pessoais</h4>
 
+    <div class="form-group" *ngIf="modificar">
+      <label for="id">Id</label>
+      <input id="id" [(ngModel)]="usuario.id" class="form-control" type="text" name="id"  disabled>
+    </div>
+
     <div class="form-group">
       <label for="nome">Nome completo</label>
-      <input id="nome" [(ngModel)]="usuario.name" class="form-control" type="text" name="nome">
+      <input id="nome" [(ngModel)]="usuario.name" class="form-control" type="text" name="nome" >
     </div>
 
     <div class="form-group">
@@ -126,7 +131,10 @@
 
 
 <div class="modal-footer">
+  <button type="submit" class="btn btn-success" *ngIf="!modificar">Confirmar</button>
+  <button type="button" class="btn btn-danger" *ngIf="modificar" (click)= deletarUsuario(usuario)>Deletar</button>
+  <button type="button" class="btn btn-info" *ngIf="modificar" (click)= modiciarUsuario(usuario)>Salvar</button>
   <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
-  <button type="submit" class="btn btn-success">Confirmar</button>
+
 </div>
 </form>

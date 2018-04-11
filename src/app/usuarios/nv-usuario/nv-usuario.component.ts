@@ -18,6 +18,7 @@ export class NvUsuarioComponent implements OnInit {
   closeBtnName: string;
   mensagem: string;
   usuario: Usuario;
+  modificar: boolean;
   usuarioS: Usuario;
 
   constructor(public bsModalRef: BsModalRef) {}
@@ -29,6 +30,17 @@ export class NvUsuarioComponent implements OnInit {
       console.log(this.usuarioS);
       this.bsModalRef.hide();
 
+  }
+  modiciarUsuario(usuario){
+      console.log(this.usuario);
+
+      this.bsModalRef.hide();
+  }
+
+  deletarUsuario(usuario){
+      console.log(this.usuario);
+
+      this.bsModalRef.hide();
   }
 
 
