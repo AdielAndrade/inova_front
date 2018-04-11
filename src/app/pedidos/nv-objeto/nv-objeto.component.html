@@ -10,6 +10,11 @@
 
     <h4>Dados do Objeto</h4>
 
+    <div class="form-group" *ngIf="modificar">
+      <label for="id">Nome completo</label>
+      <input id="id" [(ngModel)]="objetos.id" class="form-control" type="text" name="id" disabled>
+    </div>
+
     <div class="form-group">
       <label for="nome">Nome completo</label>
       <input id="nome" [(ngModel)]="objetos.name" class="form-control" type="text" name="nome">
@@ -32,10 +37,11 @@
 
 
 
-
-
 <div class="modal-footer">
+  <button type="button" class="btn btn-danger" *ngIf="modificar" (click)= deletarObjeto(objetos)>Deletar</button>
+  <button type="button" class="btn btn-info" *ngIf="modificar" (click)= modiciarObjeto(objetos)>Salvar</button>
+  <button type="submit" class="btn btn-success" *ngIf="!modificar">Confirmar</button>
   <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
-  <button type="submit" class="btn btn-success">Confirmar</button>
+
 </div>
 </form>

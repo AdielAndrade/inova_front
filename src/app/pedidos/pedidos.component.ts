@@ -22,7 +22,19 @@ export class PedidosComponent implements OnInit {
     const initialState = {
       title: 'Criar Objeto',
       objetos: new Pobjects(null,null,null,null,null),
-      mensagem: 'Objeto adicionado com sucesso'
+      mensagem: 'Objeto adicionado com sucesso',
+      modificar: true
+    };
+    this.bsModalRef = this.modalService.show(NvObjetoComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+  }
+
+  opcoes(objetos: Pobjects) {
+    const initialState = {
+      title: 'Criar Objeto',
+      objetos: objetos,
+      mensagem: 'Objeto adicionado com sucesso',
+      modificar: true
     };
     this.bsModalRef = this.modalService.show(NvObjetoComponent, {initialState});
     this.bsModalRef.content.closeBtnName = 'Close';

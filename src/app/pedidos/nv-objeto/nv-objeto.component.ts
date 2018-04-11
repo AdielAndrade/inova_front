@@ -18,6 +18,7 @@ export class NvObjetoComponent implements OnInit {
   closeBtnName: string;
   mensagem: string;
   objetos: Pobjects;
+  modificar: boolean;
 
   constructor(public bsModalRef: BsModalRef) {
 
