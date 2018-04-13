@@ -20,7 +20,6 @@ export class AvPedidosComponent implements OnInit {
   avaliar() {
     const initialState = {
       title: 'Avaliar Pedido',
-
       mensagem: 'Objeto adicionado com sucesso',
     };
     this.bsModalRef = this.modalService.show(AvaliacoComponent , {initialState});

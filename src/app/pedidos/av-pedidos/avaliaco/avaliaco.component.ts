@@ -14,7 +14,6 @@ export class AvaliacoComponent implements OnInit {
   closeBtnName: string;
   mensagem: string;
   
-  modificar: boolean;
 
   constructor(public bsModalRef: BsModalRef) {
 

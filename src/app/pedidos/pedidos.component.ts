@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Pobjects } from './p-object.model';
+import {PedidosService} from './pedidos.service';
 import { NvObjetoComponent } from './nv-objeto/nv-objeto.component';
 
 import { BsModalService } from 'ngx-bootstrap/modal';
@@ -16,7 +17,7 @@ export class PedidosComponent implements OnInit {
   bsModalRef: BsModalRef;
   objects: Pobjects[] = [];
 
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService, private pedidosService: PedidosService) { }
 
   criarObjeto() {
     const initialState = {
@@ -41,6 +42,9 @@ export class PedidosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.pedidosService.getUsuarios()
+    .subscribe(objects => this.objects = objects);
+
   }
 
 
