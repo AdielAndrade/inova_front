@@ -6,14 +6,14 @@ import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
 import { API } from '../app.api'
-import { Pobjects } from './p-object.model';
+import { AvPedidos } from './av-pedidos.modal';
 
 import {ErrorHandler} from '../app.error-handler'
 
 
 
 @Injectable()
-export class PedidosService {
+export class AvPedidosService {
 
   constructor(private http: Http){}
 
@@ -24,8 +24,8 @@ export class PedidosService {
   // }
 
 
-  getObjetos(): Observable<Pobjects[]>{
-    return this.http.get(`${API}/objetos`)
+  getPedidos(): Observable<AvPedidos[]>{
+    return this.http.get(`${API}/AvaliarPedidos`)
     .map(response => response.json())
     .catch(ErrorHandler.handleError)
 

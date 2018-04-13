@@ -24,7 +24,7 @@ export class PedidosComponent implements OnInit {
       title: 'Criar Objeto',
       objetos: new Pobjects(null,null,null,null,null),
       mensagem: 'Objeto adicionado com sucesso',
-      modificar: true
+      modificar: false
     };
     this.bsModalRef = this.modalService.show(NvObjetoComponent, {initialState});
     this.bsModalRef.content.closeBtnName = 'Close';
@@ -42,7 +42,7 @@ export class PedidosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pedidosService.getUsuarios()
+    this.pedidosService.getObjetos()
     .subscribe(objects => this.objects = objects);
 
   }

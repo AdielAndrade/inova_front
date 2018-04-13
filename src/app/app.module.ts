@@ -28,10 +28,11 @@ import { QAvaliacaoComponent } from './quiz/q-respostas/q-avaliacao/q-avaliacao.
 import { MAvaliacaoComponent } from './missoes/respostas/m-avaliacao/m-avaliacao.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { NvObjetoComponent } from './pedidos/nv-objeto/nv-objeto.component';
-import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
-import { AvaliacoComponent } from './pedidos/av-pedidos/avaliaco/avaliaco.component';
+import { AvPedidosComponent } from './av-pedidos/av-pedidos.component';
+import { AvaliacoComponent } from './av-pedidos/avaliaco/avaliaco.component';
 import { UsuarioService } from './usuarios/usuario.service';
 import { PedidosService } from './pedidos/pedidos.service';
+import { AvPedidosService } from './av-pedidos/av-pedidos.service';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { PedidosService } from './pedidos/pedidos.service';
  ],
   providers: [
     UsuarioService,
-    PedidosService
+    PedidosService,
+    AvPedidosService
   ],
   bootstrap: [AppComponent]
 })

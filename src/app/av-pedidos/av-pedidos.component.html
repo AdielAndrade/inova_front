@@ -1,0 +1,36 @@
+<div class="top-space">
+
+
+  <nav class="navbar navbar-dark bg-dark ">
+    <span class="navbar-brand">Avaliar Pedidos</span>
+
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Procurar" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
+    </form>
+  </nav>
+
+</div>
+
+<br>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>USUARIO</th>
+    <th>OBJETO</th>
+    <th>ESTADO</th>
+    <th>AÇÃO</th>
+  </tr>
+  <tr *ngFor="let pedido of pedidos">
+    <td></td>
+    <td>{{pedido.id}}</td>
+    <td>{{pedido.userName}}</td>
+    <td>{{pedido.objectName}}</td>
+    <td>{{pedido.status}}</td>
+    <td>
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)="avaliar(pedido)">Opções</button>
+    </td>
+  </tr>
+
+</table>

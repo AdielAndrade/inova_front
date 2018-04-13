@@ -8,7 +8,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { RespostasComponent } from './missoes/respostas/respostas.component';
 import { QRespostasComponent } from './quiz/q-respostas/q-respostas.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
-import { AvPedidosComponent } from './pedidos/av-pedidos/av-pedidos.component';
+import { AvPedidosComponent } from './av-pedidos/av-pedidos.component';
 
 const APP_ROUTES: Routes = [
   { path: '', component: LoginComponent },
